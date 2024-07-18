@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="id" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inheritance &mdash; Dokumentasi HOL-Business-Application-Development </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=cf1f3345"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=2cbafe98"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="../../genindex.html" />
+    <link rel="search" title="Pencarian" href="../../search.html" />
+    <link rel="next" title="Arraylist dan Vector" href="arraylist-vector.html" />
+    <link rel="prev" title="Encapsulation" href="../Session02/encapsulation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            HOL-Business-Application-Development
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Session 02 - OOP &amp; Encapsulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session02/intro-to-oop.html">Introduction to Object Oriented Programming Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session02/class-object.html">Class, Object, dan Constructor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session02/encapsulation.html">Encapsulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 03 - Inheritance</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arraylist-vector.html">Arraylist dan Vector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 04 - Polymorphism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/polymorphism.html">Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/abstraction.html">Abstraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/upcasting-downcasting.html">Upcasting dan Downcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/interface.html">Interface</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">HOL-Business-Application-Development</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Inheritance</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Materials/Session03/inheritance.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="inheritance">
+<h1>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading"></a></h1>
+<p>Setelah mempelajari <em>encapsulation</em>, maka kita akan mempelajari pilar utama OOP yang selanjutnya, yaitu <em>inheritance</em>. <em>Inheritance</em> adalah salah satu konsep dasar dalam pemrograman berorientasi objek yang memungkinkan kita untuk membuat <em>class</em> baru yang mewarisi atribut dan metode dari <em>class</em> yang sudah ada.
+<em>Class</em> yang mewarisi disebut sebagai <em>subclass</em> atau <em>child class</em>, sedangkan <em>class</em> yang diwarisi disebut sebagai <em>superclass</em> atau <em>parent class</em>. Maka dapat disimpulkan, <em>inheritance</em> adalah proses dimana <em>subclass</em> mewarisi atribut dan metode dari <em>superclass</em>.</p>
+<p>Berikut adalah contoh implementasi <em>inheritance</em> dalam Java:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Deklarasi class parent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Binusian</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Atribut yang dimiliki oleh class Binusian</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Constructor dari class Binusian</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">Binusian</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">binusianID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binusianID</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">birthDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">birthDate</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">role</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">registrationYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Metode yang dimiliki oleh class Binusian</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">masukBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Selamat datang di Binus!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keluarBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sampai jumpa! Hati-hati di jalan!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Implementasi class child</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Binusian</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Atribut yang dimiliki oleh class Student</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NIM</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">major</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">semester</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Constructor dari class Student</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">NIM</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">major</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">semester</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">super</span><span class="p">(</span><span class="n">binusianID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">birthDate</span><span class="p">,</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">NIM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NIM</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">major</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">major</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">semester</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">semester</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Metode yang dimiliki oleh class Student</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">study</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mahasiswa sedang belajar&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">exam</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mahasiswa sedang ujian&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Lecturer</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Binusian</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Atribut yang dimiliki oleh class Lecturer</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lecturerCode</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">subject</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Constructor dari class Lecturer</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">Lecturer</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lecturerCode</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">subject</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">salary</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">super</span><span class="p">(</span><span class="n">binusianID</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">birthDate</span><span class="p">,</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">lecturerCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lecturerCode</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">subject</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">salary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Metode yang dimiliki oleh class Lecturer</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">teach</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dosen sedang mengajar&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">caseMake</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;dosen sedang membuat soal&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Membuat objek Student</span>
+<span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">(</span><span class="s">&quot;BN123456789&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Java&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;01-01-2004&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mahasiswa&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2022</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2602000000&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Computer Science&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="n">student</span><span class="p">.</span><span class="na">masukBinus</span><span class="p">();</span>
+<span class="w">        </span><span class="n">student</span><span class="p">.</span><span class="na">study</span><span class="p">();</span>
+<span class="w">        </span><span class="n">student</span><span class="p">.</span><span class="na">exam</span><span class="p">();</span>
+<span class="w">        </span><span class="n">student</span><span class="p">.</span><span class="na">keluarBinus</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Membuat objek Lecturer</span>
+<span class="w">        </span><span class="n">Lecturer</span><span class="w"> </span><span class="n">lecturer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Lecturer</span><span class="p">(</span><span class="s">&quot;BN987654321&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;01-01-2000&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dosen&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;D1234&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Programming&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8000000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lecturer</span><span class="p">.</span><span class="na">masukBinus</span><span class="p">();</span>
+<span class="w">        </span><span class="n">lecturer</span><span class="p">.</span><span class="na">teach</span><span class="p">();</span>
+<span class="w">        </span><span class="n">lecturer</span><span class="p">.</span><span class="na">caseMake</span><span class="p">();</span>
+<span class="w">        </span><span class="n">lecturer</span><span class="p">.</span><span class="na">keluarBinus</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Main</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Selamat datang di Binus!</span>
+<span class="go">Mahasiswa sedang belajar</span>
+<span class="go">Mahasiswa sedang ujian</span>
+<span class="go">Sampai jumpa! Hati-hati di jalan!</span>
+<span class="go">Selamat datang di Binus!</span>
+<span class="go">Dosen sedang mengajar</span>
+<span class="go">Dosen sedang membuat soal</span>
+<span class="go">Sampai jumpa! Hati-hati di jalan!</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<p>Keyword <code class="docutils literal notranslate"><span class="pre">super</span></code> digunakan untuk memanggil constructor dari <em>superclass</em>, sehingga atribut dari <em>superclass</em> dapat diwariskan ke <em>subclass</em>.</p>
+</div>
+<p>Pada contoh di atas, <em>class</em> <cite>Student</cite> dan <cite>Lecturer</cite> mewarisi atribut dan metode dari <em>class</em> <cite>Binusian</cite>.
+<em>Class</em> <cite>Student</cite> dan <cite>Lecturer</cite> adalah <em>subclass</em> dari <em>class</em> <cite>Binusian</cite>, sedangkan <em>class</em> <cite>Binusian</cite> adalah <em>superclass</em> dari <em>class</em> <cite>Student</cite> dan <cite>Lecturer</cite>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Session02/encapsulation.html" class="btn btn-neutral float-left" title="Encapsulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arraylist-vector.html" class="btn btn-neutral float-right" title="Arraylist dan Vector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fery Fernandi FF23-1.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

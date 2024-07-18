@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="id" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class, Object, dan Constructor &mdash; Dokumentasi HOL-Business-Application-Development </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=cf1f3345"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=2cbafe98"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="../../genindex.html" />
+    <link rel="search" title="Pencarian" href="../../search.html" />
+    <link rel="prev" title="Introduction to Object Oriented Programming Concepts" href="intro-to-oop.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            HOL-Business-Application-Development
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Session 02 - OOP and Encapsulation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro-to-oop.html">Introduction to Object Oriented Programming Concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Class, Object, dan Constructor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class">Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#object">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#constructor">Constructor</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">HOL-Business-Application-Development</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Class, Object, dan Constructor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Materials/Session02/class-object.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-object-dan-constructor">
+<h1>Class, Object, dan Constructor<a class="headerlink" href="#class-object-dan-constructor" title="Link to this heading"></a></h1>
+<p>Pada materi sebelumnya, disebutkan beberapa konsep dasar dalam OOP, salah satunya adalah class dan object. Berikut penjelasan lebih dalam mengenai class dan object.</p>
+<section id="class">
+<h2>Class<a class="headerlink" href="#class" title="Link to this heading"></a></h2>
+<p>Class adalah blueprint atau cetakan untuk menciptakan objek. Class mendefinisikan <em>atribut</em> (variabel) dan <em>metode</em> (fungsi) yang akan dimiliki oleh objek. Dalam Java, class adalah struktur dasar yang digunakan untuk membuat objek. Misalnya kita ingin membuat class Binusian (warga Binus). Maka atribut yang dimiliki oleh class tersebut adalah Binusian ID, nama, tanggal lahir, peran, dan lainnya. Sedangkan metode yang dimiliki oleh class tersebut adalah masukBinus(), keluarBinus(), absen(), dan lainnya.</p>
+<p>Berikut adalah implementasi kode dalam membuat class berdasarkan contoh di atas.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Deklarasi class Binusian</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Binusian</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Atribut yang dimiliki oleh class Binusian</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Metode yang dimiliki oleh class Binusian</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">masukBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Selamat datang di Binus!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keluarBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sampai jumpa! Hati-hati di jalan!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">absen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Absen berhasil!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="object">
+<h2>Object<a class="headerlink" href="#object" title="Link to this heading"></a></h2>
+<p>Object adalah instance dari class. Object adalah wujud nyata dari class yang telah didefinisikan sebelumnya. Dengan kata lain, object adalah realisasi dari class. Misalnya kita membuat objek dari class Binusian, maka objek tersebut adalah wujud nyata dari class Binusian yang memiliki atribut dan metode yang telah didefinisikan sebelumnya.
+Object dapat dibuat dengan memanggil constructor dari class tersebut. Ketika sebuah object dibuat, semua atribut dan method yang sudah didefinisikan di dalam class dapat langsung digunakan.</p>
+<p>Berikut adalah implementasi kode dalam membuat object berdasarkan contoh di atas.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Deklarasi class Binusian, yang sudah dibuat sebelumnya</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Binusian</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">masukBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Selamat datang di Binus!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keluarBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sampai jumpa! Hati-hati di jalan!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">absen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Absen berhasil!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Membuat object dari class Binusian</span>
+<span class="w">        </span><span class="n">Binusian</span><span class="w"> </span><span class="n">binusian</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Binusian</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Menampilkan isi atribut dari class Binusian</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Binusian ID = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">binusianID</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nama = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">nama</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tanggal Lahir = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">birthDate</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Peran = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">role</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tahun Pendaftaran = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">registrationYear</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Memanggil perilaku dari class Binusian</span>
+<span class="w">        </span><span class="n">binusian</span><span class="p">.</span><span class="na">masukBinus</span><span class="p">();</span>
+<span class="w">        </span><span class="n">binusian</span><span class="p">.</span><span class="na">absen</span><span class="p">();</span>
+<span class="w">        </span><span class="n">binusian</span><span class="p">.</span><span class="na">keluarBinus</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Main</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Binusian ID = null</span>
+<span class="go">Nama = null</span>
+<span class="go">Tanggal Lahir = null</span>
+<span class="go">Peran = null</span>
+<span class="go">Tahun Pendaftaran = 0</span>
+<span class="go">Selamat datang di Binus!</span>
+<span class="go">Absen berhasil!</span>
+<span class="go">Sampai jumpa! Hati-hati di jalan!</span>
+</pre></div>
+</div>
+<p>Pada kode di atas, atribut yang dimiliki pada class Binusian masih bernilai default. Selain itu, method yang dimiliki juga melakukan output secara statis. Oleh karena itu, perlu dibuat constructor pada class Binusian untuk menginisialisasikan atribut.</p>
+</section>
+<section id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Link to this heading"></a></h2>
+<p>Constructor adalah metode khusus yang digunakan untuk menginisialisasikan objek dari class. Constructor memiliki nama yang sama dengan nama class dan tidak memiliki nilai balik (void). Constructor akan dijalankan ketika objek dari class tersebut dibuat. Constructor digunakan untuk menginisialisasikan nilai awal dari atribut yang dimiliki oleh class.</p>
+<p>Berikut adalah implementasi kode dalam membuat constructor pada class Binusian.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Deklarasi class Binusian, yang sudah dibuat sebelumnya</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Binusian</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Constructor untuk menginisialisasikan atribut</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">Binusian</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">binusianID</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">birthDate</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">role</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">binusianID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binusianID</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">birthDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">birthDate</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">role</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">registrationYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registrationYear</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">masukBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Selamat datang di Binus!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">keluarBinus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sampai jumpa! Hati-hati di jalan!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">absen</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Absen berhasil!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Membuat object dari class Binusian</span>
+<span class="w">        </span><span class="n">Binusian</span><span class="w"> </span><span class="n">binusian</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Binusian</span><span class="p">(</span><span class="s">&quot;BN123456789&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Java&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;01-01-2004&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Mahasiswa&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2022</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Menampilkan isi atribut dari class Binusian</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Binusian ID = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">binusianID</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nama = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">nama</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tanggal Lahir = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">birthDate</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Peran = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">role</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tahun Pendaftaran = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">binusian</span><span class="p">.</span><span class="na">registrationYear</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Memanggil perilaku dari class Binusian</span>
+<span class="w">        </span><span class="n">binusian</span><span class="p">.</span><span class="na">masukBinus</span><span class="p">();</span>
+<span class="w">        </span><span class="n">binusian</span><span class="p">.</span><span class="na">absen</span><span class="p">();</span>
+<span class="w">        </span><span class="n">binusian</span><span class="p">.</span><span class="na">keluarBinus</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Main</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Binusian ID = BN123456789</span>
+<span class="go">Nama = Java</span>
+<span class="go">Tanggal Lahir = 01-01-2004</span>
+<span class="go">Peran = Mahasiswa</span>
+<span class="go">Tahun Pendaftaran = 2022</span>
+<span class="go">Selamat datang di Binus!</span>
+<span class="go">Absen berhasil!</span>
+<span class="go">Sampai jumpa! Hati-hati di jalan!</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<p>Pada saat melakukan inisialisasi atribut pada <em>class</em> Binusian di dalam <em>constructor</em>, digunakan kata kunci <code class="docutils literal notranslate"><span class="pre">this</span></code>. Kata kunci <code class="docutils literal notranslate"><span class="pre">this</span></code> merupakan refrensi ke <em>object</em> tersebut. Apabila tidak menggunakan kata kunci tersebut, kode akan berubah menjadi <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">name</span></code>, yang dapat menimbulkan ambiguitas. Oleh karena itu, kode dibuat menjadi <code class="docutils literal notranslate"><span class="pre">this.name</span> <span class="pre">=</span> <span class="pre">name</span></code>, artinya variabel name pada <em>class</em> Binusian diubah berdasarkan nilai dari variabel name pada parameter <em>constructor</em>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro-to-oop.html" class="btn btn-neutral float-left" title="Introduction to Object Oriented Programming Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fery Fernandi FF23-1.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="id" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Practice - Laptop Rental &mdash; Dokumentasi HOL-Business-Application-Development </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=cf1f3345"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=2cbafe98"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="../../genindex.html" />
+    <link rel="search" title="Pencarian" href="../../search.html" />
+    <link rel="next" title="Introduction to Java GUI Programming" href="../Session06/intro-to-java-gui.html" />
+    <link rel="prev" title="Interface" href="../Session04/interface.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            HOL-Business-Application-Development
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pendahuluan</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Pendahuluan/panduan-instalasi.html">Panduan Instalasi</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 02 - OOP &amp; Encapsulation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session02/intro-to-oop.html">Introduction to Object Oriented Programming Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session02/class-object.html">Class, Object, dan Constructor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session02/encapsulation.html">Encapsulation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 03 - Inheritance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session03/inheritance.html">Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session03/arraylist-vector.html">Arraylist dan Vector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 04 - Polymorphism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/polymorphism.html">Polymorphism</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/abstraction.html">Abstraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/upcasting-downcasting.html">Upcasting dan Downcasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session04/interface.html">Interface</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 05 - Practice Case for Quiz 1</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quiz Practice - Laptop Rental</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#criteria">Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#case-description">Case Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#menu">Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#insert-laptop">Insert Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-laptop">View Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#borrow-laptop">Borrow Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#repair-laptop">Repair Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-laptop">Delete Laptop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exit">Exit</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 06 - Java GUI &amp; GUI Component I</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session06/intro-to-java-gui.html">Introduction to Java GUI Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session06/setup-javafx.html">Setup JavaFX Project in Eclipse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session06/layout.html">Layout</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session06/component-1.html">Component I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session06/implementation.html">Implementation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 07 - GUI Component II</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session07/component-2.html">Component II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session07/menu.html">Menu, Menubar, dan MenuItem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session07/jfxtras.html">JFXtras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session07/implementation.html">Implementation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Session 07 - GUI Component III &amp; Event Handling</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Session08/component-3.html">Component III</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session08/event-driven-programming-1.html">Event Driven Programming I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session08/validation-alert.html">Form Validation dan Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Session08/implementation.html">Implementation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">HOL-Business-Application-Development</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quiz Practice - Laptop Rental</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/Materials/Session05/quiz-practice.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quiz-practice-laptop-rental">
+<h1>Quiz Practice - Laptop Rental<a class="headerlink" href="#quiz-practice-laptop-rental" title="Link to this heading"></a></h1>
+<section id="criteria">
+<h2>Criteria<a class="headerlink" href="#criteria" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Abstract Class</p></li>
+</ol>
+<p>Design at least three classes, consisting of one abstract class and two concrete class. Abstract class consists of all common attributes and behaviour that both of the concrete class had. Concrete class consist of specific attribute and behaviour that is not common between the concrete classes.</p>
+<ol class="arabic simple" start="2">
+<li><p>Encapsulation</p></li>
+</ol>
+<p>Attributes of the class must be encapsulated in order to prevent illegal direct access, and can only be accessed using accessor and mutator that may perform validation before accessing the encapsulated attribute.</p>
+<ol class="arabic simple" start="3">
+<li><p>Inheritance</p></li>
+</ol>
+<p>Concrete classes must inherit all attributes and behaviours from the abstract class.</p>
+<ol class="arabic simple" start="4">
+<li><p>Polymorphism</p></li>
+</ol>
+<p>Concrete class may override behaviour inherited from abstract class according to their specific implementation.</p>
+</section>
+<section id="case-description">
+<h2>Case Description<a class="headerlink" href="#case-description" title="Link to this heading"></a></h2>
+<p>Laptop Rental is a traditional laptop rental store that has been around for quite some time in West Jakarta. In their business, the owners of Laptop Rental often find it difficult to manage their many laptops. Therefore, the owners of Laptop Rental have asked you as a prospective assistant to help them create a simple program to manage all of their laptops effectively using the Java programming language.</p>
+</section>
+<section id="menu">
+<h2>Menu<a class="headerlink" href="#menu" title="Link to this heading"></a></h2>
+<p>At the beginning of the program execution, the program will display 6 menus, which are:</p>
+<ol class="arabic simple">
+<li><p>Insert Laptop</p></li>
+<li><p>View Laptop</p></li>
+<li><p>Borrow Laptop</p></li>
+<li><p>Repair Laptop</p></li>
+<li><p>Delete Laptop</p></li>
+<li><p>Exit</p></li>
+</ol>
+</section>
+<section id="insert-laptop">
+<h2>Insert Laptop<a class="headerlink" href="#insert-laptop" title="Link to this heading"></a></h2>
+<p>If the user chooses menu 1 &quot;Insert Laptop&quot;, then:</p>
+<p>The program will show 2 menus, which are:</p>
+<ol class="arabic simple">
+<li><p>Gaming Laptop</p></li>
+<li><p>Office Laptop</p></li>
+</ol>
+<p>After the user choose either menu 1 &quot;Gaming Laptop&quot; or 2 &quot;Office Laptop&quot;, the program will ask the user to input the details, which consists of:</p>
+<ol class="arabic simple">
+<li><p>Name, which length must be between 4 and 30 characters (inclusive) and every word must be start with capital character.</p></li>
+<li><p>Production Year, which must be between 2000 and 2024 (inclusive).</p></li>
+<li><p>If the user chooses &quot;Laptop Gaming&quot;, then:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Laptop Type, which must be &quot;Gaming&quot; (case sensitive).</p></li>
+<li><p>Laptop GPU Health, which must be more than 90 (inclusive).</p></li>
+<li><p>Generate ID, which is obtained from a string starting with &quot;GA&quot; and followed by three random digits. Every ID must be unique.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>If the user chooses &quot;Laptop Office&quot;, then:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Laptop Type, which must be &quot;Office&quot; (case sensitive).</p></li>
+<li><p>Laptop Hardware Health, which must be more than 80 (inclusive).</p></li>
+<li><p>Generate ID, which is obtained from a string starting with &quot;OF&quot; and followed by three random digits. Every ID must be unique.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Add the data to Java Collection and display a message.</p></li>
+</ol>
+</section>
+<section id="view-laptop">
+<h2>View Laptop<a class="headerlink" href="#view-laptop" title="Link to this heading"></a></h2>
+<p>If the user chooses menu 2 &quot;View Laptop&quot;, then:</p>
+<p>If the list is empty, then display the message &quot;Gaming Laptop is empty&quot; and &quot;Office Laptop is empty&quot;. Otherwise, display all data in the list based on laptiop type.</p>
+</section>
+<section id="borrow-laptop">
+<h2>Borrow Laptop<a class="headerlink" href="#borrow-laptop" title="Link to this heading"></a></h2>
+<p>If the user chooses menu 3 &quot;Borrow Laptop&quot;, then:</p>
+<ul class="simple">
+<li><p>Show all data in the list based on laptop type, validate the &quot;Laptop GPU Health&quot; or &quot;Laptop Hardware Health&quot; must be more than 25 (inclusive).</p></li>
+<li><p>Then, the program will ask the user to input the laptop ID.</p></li>
+<li><p>If laptop ID was not exists, then display the message &quot;Laptop not found!&quot;</p></li>
+<li><p>Otherwise, borrow is an abstract function that depends on the child.</p></li>
+<li><p>If the type of chooses ID is Gaming, so borrow will decrease the &quot;Laptop GPU Health&quot; by 15.</p></li>
+<li><p>If the type of chooses ID is Office, so borrow will decrease the &quot;Laptop Hardware Health&quot; by 10.</p></li>
+<li><p>Then, display the success message.</p></li>
+</ul>
+</section>
+<section id="repair-laptop">
+<h2>Repair Laptop<a class="headerlink" href="#repair-laptop" title="Link to this heading"></a></h2>
+<p>If the user chooses menu 4 &quot;Repair Laptop&quot;, then:</p>
+<ul class="simple">
+<li><p>Show all data in the list based on laptop type, validate the &quot;Laptop GPU Health&quot; or &quot;Laptop Hardware Health&quot; must be less than 25 (exclusive).</p></li>
+<li><p>Then, the program will ask the user to input the laptop ID.</p></li>
+<li><p>If laptop ID was not exists, then display the message &quot;Laptop not found!&quot;</p></li>
+<li><p>Otherwise, repair is an abstract function that depends on the child.</p></li>
+<li><p>If the type of chooses ID is Gaming, so borrow will decrease the &quot;Laptop GPU Health&quot; by 60.</p></li>
+<li><p>If the type of chooses ID is Office, so borrow will decrease the &quot;Laptop Hardware Health&quot; by 70.</p></li>
+<li><p>Then, display the success message.</p></li>
+</ul>
+</section>
+<section id="delete-laptop">
+<h2>Delete Laptop<a class="headerlink" href="#delete-laptop" title="Link to this heading"></a></h2>
+<p>If the user chooses menu 5 &quot;Delete Laptop&quot;, then:</p>
+<ul class="simple">
+<li><p>Show all data in the list based on laptop type.</p></li>
+<li><p>Then, the program will ask the user to input the laptop ID.</p></li>
+<li><p>If laptop ID was not exists, then display the message &quot;Laptop not found!&quot;</p></li>
+<li><p>Otherwise, delete the laptop inputted ID from the list and display the success message.</p></li>
+</ul>
+</section>
+<section id="exit">
+<h2>Exit<a class="headerlink" href="#exit" title="Link to this heading"></a></h2>
+<p>If the user chooses menu 6 &quot;Exit&quot;, then the program will stop the execution.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Session04/interface.html" class="btn btn-neutral float-left" title="Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Session06/intro-to-java-gui.html" class="btn btn-neutral float-right" title="Introduction to Java GUI Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fery Fernandi FF23-1.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -3,15 +3,92 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-HOL-Business-Application-Development documentation
-==================================================
+HOL Business Application Development
+====================================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Halo semuanya, selamat datang di *Hands-on Lab* materi pembelajaran praktikum *Business Application Development*. Dalam *Hands-on Lab* ini akan dibahas dasar-dasar dari bahasa pemrograman *Java* hingga pembuatan *Java GUI*.
 
+Tujuan dibuatnya *Hands-on Lab* ini adalah sebagai edukasi sekaligus pendukung materi pembelajaran praktikum untuk mata kuliah yang mempelajari *OOP dan Java GUI*.
+
+.. note::
+
+   *Hands-on Lab* ini masih dalam tahap pengembangan.
+
+Daftar Isi
+==========
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Pendahuluan
 
+   Materials/Pendahuluan/panduan-instalasi
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 01 - Review to Java Programming
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 02 - OOP & Encapsulation
+
+   Materials/Session02/intro-to-oop
+   Materials/Session02/class-object
+   Materials/Session02/encapsulation
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 03 - Inheritance
+
+   Materials/Session03/inheritance
+   Materials/Session03/arraylist-vector
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 04 - Polymorphism
+
+   Materials/Session04/polymorphism
+   Materials/Session04/abstraction
+   Materials/Session04/upcasting-downcasting
+   Materials/Session04/interface
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 05 - Practice Case for Quiz 1 
+
+   Materials/Session05/quiz-practice
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 06 - Java GUI & GUI Component I
+
+   Materials/Session06/intro-to-java-gui
+   Materials/Session06/setup-javafx
+   Materials/Session06/layout
+   Materials/Session06/component-1
+   Materials/Session06/implementation
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 07 - GUI Component II
+
+   Materials/Session07/component-2
+   Materials/Session07/menu
+   Materials/Session07/jfxtras
+   Materials/Session07/implementation
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 08 - GUI Component III & Event Driven Programming I
+
+   Materials/Session08/component-3
+   Materials/Session08/event-driven-programming-1
+   Materials/Session08/validation-alert
+   Materials/Session08/implementation
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 09 - Event Driven Programming II
+
+   Materials/Session09/event-driven-programming-2
+   Materials/Session09/change-page
+   Materials/Session09/implementation
