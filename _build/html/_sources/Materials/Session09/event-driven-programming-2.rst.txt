@@ -15,26 +15,46 @@ Mouse listener adalah event yang terjadi ketika pengguna melakukan interaksi den
 -   Mouse Pressed -> event yang terjadi ketika pengguna menekan tombol mouse.
 -   Mouse Released -> event yang terjadi ketika pengguna melepas tombol mouse.
 
-Keyboard Listener
-------------------
+Berikut contoh simple code untuk mouse listener.
 
-Keyboard listener adalah event yang terjadi ketika pengguna melakukan interaksi dengan keyboard. Beberapa contoh event yang sering digunakan dalam keyboard listener sebagai berikut.
+.. code-block:: java
 
--   Key Pressed -> event yang terjadi ketika pengguna menekan tombol keyboard.
--   Key Released -> event yang terjadi ketika pengguna melepas tombol keyboard.
--   Key Code -> event yang terjadi ketika pengguna menekan tombol keyboard dengan kode tertentu.
--   Key Character -> event yang terjadi ketika pengguna menekan tombol keyboard dengan karakter tertentu.
+    import javafx.application.Application;
+    import javafx.scene.Scene;
+    import javafx.scene.control.ComboBox;
+    import javafx.scene.layout.StackPane;
+    import javafx.stage.Stage;
 
-Item Listener
---------------
+    public class Main extends Application {
 
-Item listener adalah event yang terjadi ketika pengguna melakukan interaksi dengan item. Beberapa contoh event yang sering digunakan dalam item listener sebagai berikut.
+        @Override
+        public void start(Stage primaryStage) {
 
--   Item State Changed -> event yang terjadi ketika status item berubah.
--   Item Selected -> event yang terjadi ketika item dipilih.
--   Item Deselected -> event yang terjadi ketika item tidak dipilih.
--   Item Clicked -> event yang terjadi ketika item diklik.
--   Item Entered -> event yang terjadi ketika mouse masuk ke dalam area item.
--   Item Exited -> event yang terjadi ketika mouse keluar dari area item.
--   Item Pressed -> event yang terjadi ketika pengguna menekan tombol mouse pada item.
--   Item Released -> event yang terjadi ketika pengguna melepas tombol mouse pada item.
+            // Membuat combo box
+            ComboBox<String> comboBox = new ComboBox<>();
+            comboBox.getItems().addAll("Option 1", "Option 2", "Option 3");
+
+            // Menambahkan event item selected pada combo box
+            comboBox.setOnAction(e -> {
+                String selectedOption = comboBox.getValue();
+                System.out.println("Selected Option: " + selectedOption);
+            });
+
+            // Membuat StackPane
+            StackPane root = new StackPane();
+
+            // Menambahkan combo box ke StackPane
+            root.getChildren().add(comboBox);
+
+            // Membuat scene
+            Scene scene = new Scene(root, 300, 250);
+
+            primaryStage.setTitle("Item Event Listener");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+
+        public static void main(String[] args) {
+            launch(args);
+        }
+    }

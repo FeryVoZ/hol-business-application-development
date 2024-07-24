@@ -27,6 +27,14 @@ Daftar Isi
    :maxdepth: 1
    :caption: Session 01 - Review to Java Programming
 
+   Materials/Session01/input-output
+   Materials/Session01/variable
+   Materials/Session01/primitive-wrapper
+   Materials/Session01/arithmetic-logical-operator
+   Materials/Session01/selection
+   Materials/Session01/repetition
+   Materials/Session01/method
+
 .. toctree::
    :maxdepth: 1
    :caption: Session 02 - OOP & Encapsulation
@@ -92,3 +100,21 @@ Daftar Isi
    Materials/Session09/event-driven-programming-2
    Materials/Session09/change-page
    Materials/Session09/implementation
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 10 - Java Database Programming I
+
+   Materials/Session10/database-preparation
+   Materials/Session10/connect-mysql-database
+   Materials/Session10/insert-data
+   Materials/Session10/view-data
+   Materials/Session10/implementation
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Session 11 - Java Database Programming II
+
+   Materials/Session11/update-data
+   Materials/Session11/delete-data
+   Materials/Session11/query-statement

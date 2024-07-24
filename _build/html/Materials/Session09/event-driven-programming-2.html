@@ -97,8 +97,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Event Driven Programming II</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#mouse-listener">Mouse Listener</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#keyboard-listener">Keyboard Listener</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#item-listener">Item Listener</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="change-page.html">Change Page</a></li>
@@ -143,30 +141,48 @@ Pada sesi ini, kita akan mempelajari beberapa jenis event yang sering digunakan 
 <li><p>Mouse Pressed -&gt; event yang terjadi ketika pengguna menekan tombol mouse.</p></li>
 <li><p>Mouse Released -&gt; event yang terjadi ketika pengguna melepas tombol mouse.</p></li>
 </ul>
-</section>
-<section id="keyboard-listener">
-<h2>Keyboard Listener<a class="headerlink" href="#keyboard-listener" title="Link to this heading"></a></h2>
-<p>Keyboard listener adalah event yang terjadi ketika pengguna melakukan interaksi dengan keyboard. Beberapa contoh event yang sering digunakan dalam keyboard listener sebagai berikut.</p>
-<ul class="simple">
-<li><p>Key Pressed -&gt; event yang terjadi ketika pengguna menekan tombol keyboard.</p></li>
-<li><p>Key Released -&gt; event yang terjadi ketika pengguna melepas tombol keyboard.</p></li>
-<li><p>Key Code -&gt; event yang terjadi ketika pengguna menekan tombol keyboard dengan kode tertentu.</p></li>
-<li><p>Key Character -&gt; event yang terjadi ketika pengguna menekan tombol keyboard dengan karakter tertentu.</p></li>
-</ul>
-</section>
-<section id="item-listener">
-<h2>Item Listener<a class="headerlink" href="#item-listener" title="Link to this heading"></a></h2>
-<p>Item listener adalah event yang terjadi ketika pengguna melakukan interaksi dengan item. Beberapa contoh event yang sering digunakan dalam item listener sebagai berikut.</p>
-<ul class="simple">
-<li><p>Item State Changed -&gt; event yang terjadi ketika status item berubah.</p></li>
-<li><p>Item Selected -&gt; event yang terjadi ketika item dipilih.</p></li>
-<li><p>Item Deselected -&gt; event yang terjadi ketika item tidak dipilih.</p></li>
-<li><p>Item Clicked -&gt; event yang terjadi ketika item diklik.</p></li>
-<li><p>Item Entered -&gt; event yang terjadi ketika mouse masuk ke dalam area item.</p></li>
-<li><p>Item Exited -&gt; event yang terjadi ketika mouse keluar dari area item.</p></li>
-<li><p>Item Pressed -&gt; event yang terjadi ketika pengguna menekan tombol mouse pada item.</p></li>
-<li><p>Item Released -&gt; event yang terjadi ketika pengguna melepas tombol mouse pada item.</p></li>
-</ul>
+<p>Berikut contoh simple code untuk mouse listener.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.ComboBox</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.StackPane</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="c1">// Membuat combo box</span>
+<span class="w">        </span><span class="n">ComboBox</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">comboBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ComboBox</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">comboBox</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">addAll</span><span class="p">(</span><span class="s">&quot;Option 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Option 3&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Menambahkan event item selected pada combo box</span>
+<span class="w">        </span><span class="n">comboBox</span><span class="p">.</span><span class="na">setOnAction</span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">selectedOption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">comboBox</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Selected Option: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">selectedOption</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="c1">// Membuat StackPane</span>
+<span class="w">        </span><span class="n">StackPane</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StackPane</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Menambahkan combo box ke StackPane</span>
+<span class="w">        </span><span class="n">root</span><span class="p">.</span><span class="na">getChildren</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">comboBox</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Membuat scene</span>
+<span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;Item Event Listener&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">scene</span><span class="p">);</span>
+<span class="w">        </span><span class="n">primaryStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">launch</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 

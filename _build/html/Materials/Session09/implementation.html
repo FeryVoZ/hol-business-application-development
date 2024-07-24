@@ -125,6 +125,236 @@
              
   <section id="implementation">
 <h1>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h1>
+<p>Berikut ada implementasi dari event driven programming dan pergantian halaman pada JavaFX.</p>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<p>Bentuk implementasi code dari JavaFX dapat berbeda-beda tergantung dari kebutuhan aplikasi yang dibuat dan juga gaya penulisan code yang digunakan.
+Berikut ini, merupakan salah satu contoh implementasi dari component dan jfxtras, jika kalian menemukan cara implementasi yang berbeda, kalian dapat mencoba dan mempelajarinya untuk menentukan mana yang nyaman untuk kalian gunakan.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">main</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.application.Application</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pages.LoginPage</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Application</span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">launch</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">primaryStage</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// TODO Auto-generated method stub</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">LoginPage</span><span class="p">(</span><span class="n">primaryStage</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">pages</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Alert</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.ComboBox</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Label</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.PasswordField</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Spinner</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.TextField</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.BorderPane</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.GridPane</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">LoginPage</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="n">Stage</span><span class="w"> </span><span class="n">loginStage</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">loginScene</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">BorderPane</span><span class="w"> </span><span class="n">bp</span><span class="p">;</span>
+<span class="w">        </span><span class="n">GridPane</span><span class="w"> </span><span class="n">gp</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Label</span><span class="w"> </span><span class="n">emailLbl</span><span class="p">,</span><span class="w"> </span><span class="n">passLbl</span><span class="p">,</span><span class="w"> </span><span class="n">ageLbl</span><span class="p">,</span><span class="w"> </span><span class="n">countryLbl</span><span class="p">,</span><span class="w"> </span><span class="n">statusLbl</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">TextField</span><span class="w"> </span><span class="n">emailTF</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PasswordField</span><span class="w"> </span><span class="n">passPF</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Spinner</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ageSpinner</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ComboBox</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">countryBox</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Button</span><span class="w"> </span><span class="n">loginButton</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">intialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">emailLbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Email: &quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">passLbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Password: &quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ageLbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Age: &quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">countryLbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;Country: &quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">statusLbl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">();</span>
+
+<span class="w">                </span><span class="n">emailTF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TextField</span><span class="p">();</span>
+<span class="w">                </span><span class="n">emailTF</span><span class="p">.</span><span class="na">setPromptText</span><span class="p">(</span><span class="s">&quot;Must ends with @gmail.com&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">passPF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PasswordField</span><span class="p">();</span>
+<span class="w">                </span><span class="n">passPF</span><span class="p">.</span><span class="na">setPromptText</span><span class="p">(</span><span class="s">&quot;Must have minimum 8 characters&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">ageSpinner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Spinner</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mi">17</span><span class="p">);</span>
+<span class="w">                </span><span class="n">countryBox</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ComboBox</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">                </span><span class="n">loginButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Login&quot;</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">gp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GridPane</span><span class="p">();</span>
+<span class="w">                </span><span class="n">bp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BorderPane</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">layout</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">countryBox</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Indonesia&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">countryBox</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Singapore&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">countryBox</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Malaysia&quot;</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">emailLbl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">emailTF</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">passLbl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">passPF</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ageLbl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ageSpinner</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">countryLbl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">countryBox</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">loginButton</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">                </span><span class="n">gp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">statusLbl</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">bp</span><span class="p">.</span><span class="na">setCenter</span><span class="p">(</span><span class="n">gp</span><span class="p">);</span>
+<span class="w">                </span><span class="n">loginScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loginAction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">loginButton</span><span class="p">.</span><span class="na">setOnMouseClicked</span><span class="p">(</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">Alert</span><span class="w"> </span><span class="n">alert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Alert</span><span class="p">(</span><span class="n">Alert</span><span class="p">.</span><span class="na">AlertType</span><span class="p">.</span><span class="na">ERROR</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">String</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emailTF</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
+<span class="w">                        </span><span class="n">String</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">passPF</span><span class="p">.</span><span class="na">getText</span><span class="p">();</span>
+<span class="w">                        </span><span class="n">String</span><span class="w"> </span><span class="n">ctr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">countryBox</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span>
+
+<span class="w">                        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">email</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&quot;@gmail.com&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="n">alert</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="n">alert</span><span class="p">.</span><span class="na">setContentText</span><span class="p">(</span><span class="s">&quot;Email must ends with @gmail.com!&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="n">alert</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">pass</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="n">alert</span><span class="p">.</span><span class="na">setTitle</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="n">alert</span><span class="p">.</span><span class="na">setContentText</span><span class="p">(</span><span class="s">&quot;Password must have minimum 8 characters!&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="n">alert</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="n">loginStage</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                                </span><span class="k">new</span><span class="w"> </span><span class="n">MouseEventPage</span><span class="p">(</span><span class="n">loginStage</span><span class="p">);</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">LoginPage</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">loginStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="na">loginStage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loginStage</span><span class="p">;</span>
+
+<span class="w">                </span><span class="n">intialize</span><span class="p">();</span>
+<span class="w">                </span><span class="n">layout</span><span class="p">();</span>
+<span class="w">                </span><span class="n">loginAction</span><span class="p">();</span>
+
+<span class="w">                </span><span class="n">loginStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">loginScene</span><span class="p">);</span>
+<span class="w">                </span><span class="n">loginStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Tampilan login page</p>
+<a class="reference internal image-reference" href="../../_images/loginPage.png"><img alt="../../_images/loginPage.png" class="align-center" src="../../_images/loginPage.png" style="width: 500px;" /></a>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">pages</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.event.EventHandler</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.Scene</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Button</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Label</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.Menu</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.MenuBar</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.control.MenuItem</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.input.MouseEvent</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.scene.layout.BorderPane</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">javafx.stage.Stage</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MouseEventPage</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">EventHandler</span><span class="o">&lt;</span><span class="n">MouseEvent</span><span class="o">&gt;</span><span class="p">{</span>
+<span class="w">        </span><span class="n">Stage</span><span class="w"> </span><span class="n">mouseEventStage</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Button</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Button</span><span class="p">(</span><span class="s">&quot;Make event to me!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">BorderPane</span><span class="w"> </span><span class="n">bp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BorderPane</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Scene</span><span class="w"> </span><span class="n">mouseScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scene</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">MenuBar</span><span class="w"> </span><span class="n">menuBar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MenuBar</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Menu</span><span class="w"> </span><span class="n">menu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Menu</span><span class="p">();</span>
+<span class="w">        </span><span class="n">MenuItem</span><span class="w"> </span><span class="n">mouseEventBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;Mouse Event Page&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">MenuItem</span><span class="w"> </span><span class="n">keyboardEventBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;Keyboard Event Page&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">MenuItem</span><span class="w"> </span><span class="n">itemEventBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MenuItem</span><span class="p">(</span><span class="s">&quot;Item Event Page&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">MouseEventPage</span><span class="p">(</span><span class="n">Stage</span><span class="w"> </span><span class="n">mouseEventStage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="na">mouseEventStage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mouseEventStage</span><span class="p">;</span>
+
+<span class="w">                </span><span class="n">bp</span><span class="p">.</span><span class="na">setTop</span><span class="p">(</span><span class="n">menuBar</span><span class="p">);</span>
+<span class="w">                </span><span class="n">menuBar</span><span class="p">.</span><span class="na">getMenus</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">menu</span><span class="p">);</span>
+<span class="w">                </span><span class="n">menu</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Pages&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">menu</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">mouseEventBtn</span><span class="p">);</span>
+<span class="w">                </span><span class="n">menu</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">keyboardEventBtn</span><span class="p">);</span>
+<span class="w">                </span><span class="n">menu</span><span class="p">.</span><span class="na">getItems</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="n">itemEventBtn</span><span class="p">);</span>
+<span class="w">                </span><span class="n">bp</span><span class="p">.</span><span class="na">setCenter</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+
+<span class="w">                </span><span class="n">setMouseEvent</span><span class="p">();</span>
+
+<span class="w">                </span><span class="n">keyboardEventBtn</span><span class="p">.</span><span class="na">setOnAction</span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">                        </span><span class="n">mouseEventStage</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                        </span><span class="k">new</span><span class="w"> </span><span class="n">KeyboardEventPage</span><span class="p">(</span><span class="n">mouseEventStage</span><span class="p">);</span>
+<span class="w">                </span><span class="p">});</span>
+
+<span class="w">                </span><span class="n">itemEventBtn</span><span class="p">.</span><span class="na">setOnAction</span><span class="p">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="p">{</span>
+<span class="w">                        </span><span class="n">mouseEventStage</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                        </span><span class="k">new</span><span class="w"> </span><span class="n">ItemEventPage</span><span class="p">(</span><span class="n">mouseEventStage</span><span class="p">);</span>
+<span class="w">                </span><span class="p">});</span>
+
+<span class="w">                </span><span class="n">mouseEventStage</span><span class="p">.</span><span class="na">setScene</span><span class="p">(</span><span class="n">mouseScene</span><span class="p">);</span>
+<span class="w">                </span><span class="n">mouseEventStage</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMouseEvent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">button</span><span class="p">.</span><span class="na">setOnMouseEntered</span><span class="p">(</span>
+<span class="w">                                </span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                        </span><span class="n">button</span><span class="p">.</span><span class="na">setStyle</span><span class="p">(</span><span class="s">&quot;-fx-background-color: #87CEFA&quot;</span><span class="p">);</span>
+<span class="w">                                </span><span class="p">});</span>
+
+<span class="w">                </span><span class="n">button</span><span class="p">.</span><span class="na">setOnMouseExited</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">                </span><span class="n">button</span><span class="p">.</span><span class="na">setOnMousePressed</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">                </span><span class="n">button</span><span class="p">.</span><span class="na">setOnMouseReleased</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="nd">@Override</span>
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="n">MouseEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="na">getEventType</span><span class="p">().</span><span class="na">getName</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;MOUSE_EXITED&quot;</span><span class="p">:</span>
+<span class="w">                        </span><span class="n">button</span><span class="p">.</span><span class="na">setStyle</span><span class="p">(</span><span class="s">&quot;-fx-background-color: #FFFFFF&quot;</span><span class="p">);</span>
+<span class="w">                        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;MOUSE_PRESSED&quot;</span><span class="p">:</span>
+<span class="w">                        </span><span class="n">button</span><span class="p">.</span><span class="na">setStyle</span><span class="p">(</span><span class="s">&quot;-fx-background-color: #FF0000&quot;</span><span class="p">);</span>
+<span class="w">                        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;MOUSE_RELEASED&quot;</span><span class="p">:</span>
+<span class="w">                        </span><span class="n">button</span><span class="p">.</span><span class="na">setStyle</span><span class="p">(</span><span class="s">&quot;-fx-background-color: #008000&quot;</span><span class="p">);</span>
+<span class="w">                        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Tampilan mouse event page</p>
+<a class="reference internal image-reference" href="../../_images/mousePage.png"><img alt="../../_images/mousePage.png" class="align-center" src="../../_images/mousePage.png" style="width: 500px;" /></a>
+<p>Tampilan keyboard event page</p>
+<a class="reference internal image-reference" href="../../_images/keyboardPage.png"><img alt="../../_images/keyboardPage.png" class="align-center" src="../../_images/keyboardPage.png" style="width: 500px;" /></a>
+<p>Tampilan item event page</p>
+<a class="reference internal image-reference" href="../../_images/itemPage.png"><img alt="../../_images/itemPage.png" class="align-center" src="../../_images/itemPage.png" style="width: 500px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Catatan</p>
+<p>Saat ingin menjalankan code di atas, pastikan semua library yang dibutuhkan sudah diimport dengan baik dan benar. Pastikan juga module-info.java sudah diatur dengan benar.</p>
+</div>
 </section>
 
 
